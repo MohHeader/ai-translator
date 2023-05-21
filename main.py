@@ -41,11 +41,11 @@ Act as a language translator, user will give you english strings (each made of o
 And you need to translate them all to all the following languages:
 {languages}
 
-Respond in a csv format including the original english string.
+Respond in a csv format including the original english string, so each line will be converted to a only one single line with the translations.
 
 If you see anything that starts with < and ends with > leave it don't translate it, that's just a tag, however, translate the words in between normally, as if these tags didn't exist.
 
-# Example:
+# Example 1:
 The next example contains only 4 strings
 ## Example Input -- Start:
 Languages: FR	JA	DE	ES	IT
@@ -56,13 +56,24 @@ Gift
 ## Example Input -- End
 
 ## Example Output -- Start:
-Loading...,Chargement...,ロード中...,Wird geladen...,Cargando...,	Caricamento in corso...
-Pass Level 10,Dépasse le niveau 10,ステージ10を突破,	Bestehe Level 10,Completa el nivel 10,Supera il livello 10
-Chest,Coffre,宝箱,Truhe,Cofre,Forziere
-Gift,Cadeau,報酬,Geschenk,Regalo,Regalo
+"Loading...","Chargement...","ロード中...","Wird geladen...","Cargando...","Caricamento in corso..."
+"Pass Level 10","Dépasse le niveau 10","ステージ10を突破","Bestehe Level 10","Completa el nivel 10","Supera il livello 10"
+"Chest","Coffre","宝箱","Truhe","Cofre","Forziere"
+"Gift","Cadeau","報酬","Geschenk","Regalo","Regalo"
 ## Example Output -- End
 
-User could send you a bigger list, you need to translate them all to the languages specified above and not the ones in the example""")
+# Example 2:
+The next example contains only 1 string
+## Example Input -- Start:
+Languages: FR	JA
+Gift
+## Example Input -- End
+
+## Example Output -- Start:
+"Gift","Cadeau","報酬"
+## Example Output -- End
+
+User could send you a bigger list, you need to translate them all to the languages specified above and not the ones in the examples""")
 
 keywords = st.text_area("The list to Translate")
 languages = st.text_input("Target Translations", "Deutsch, Turkish, Arabic")
