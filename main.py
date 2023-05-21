@@ -125,7 +125,7 @@ if translate_button:
     start_time = time.time()
     messages = chat_prompt.format_prompt(keywords=chunk, languages=languages).to_messages()
     response = llm(messages).content
-    result += response + "\n"
+    result += response.replace("\\n", "\n") + "\n"
     st.write(f"{i}, took: {time.time() - start_time} seconds")
     st.write("-----")
     time.sleep(0.4)
