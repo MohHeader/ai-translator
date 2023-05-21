@@ -73,6 +73,23 @@ Gift
 "Gift","Cadeau","報酬"
 ## Example Output -- End
 
+
+#Example 3:
+The next example contains only 1 multi-line string
+## Example Input -- Start:
+Languages: Deutsch, Turkish, Arabic
+"The Piggy Bank is full!
+It's time to collect your earnings!"
+## Example Input -- End
+
+## Example Output -- Start:
+"The Piggy Bank is full!
+It's time to collect your earnings!","Das Sparschwein ist voll!
+Es ist Zeit, Ihre Einnahmen zu sammeln!","Kumbara dolu!
+Kazancınızı toplama zamanı!","الخنزير المتواضع ممتلئ!
+حان الوقت لجمع أرباحك!"
+## Example Output -- End
+
 User could send you a bigger list, you need to translate them all to the languages specified above and not the ones in the examples""")
 
 keywords = st.text_area("The list to Translate")
